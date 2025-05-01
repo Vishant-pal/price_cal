@@ -127,8 +127,6 @@ grade_d_selling_price = grade_d_price + additional_cost
 st.write(f'Grade "D": {grade_d_selling_price}')
 
 
-# sell_grade_b = grade_b_price + 
-
 
 
 
