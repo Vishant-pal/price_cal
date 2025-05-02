@@ -59,98 +59,98 @@ st.write(f'Grade d items is :green[{grade_d_quantity} kg]')
 grade_a_quantity_in_percentage = (100 - grade_b_percentage - grade_c_percentage - grade_d_percentage)
 grade_a_quantity_in_kg = round((total_weight_of_items - grade_b_quantity - grade_c_quantity - grade_d_quantity),2)
 if grade_a_quantity_in_percentage < 0:
-    st.write(f"Plese recheck your inputs percentage of grades B,C,D shouldn't more than 100 %")
+    st.write(f":red[Plese recheck your inputs percentage of grades B,C,D shouldn't more than 100 %]")
 else:
     st.write(f'Quantity of grade A items is :green[{grade_a_quantity_in_percentage} %]')
     st.write(f'Quantity of grade A items is :green[{grade_a_quantity_in_kg} Kg]')
     
 # purchasing costs in kg
 
-st.subheader(f'Grade wise purchasing cost of items before selling grade b, c, d items')
+    st.subheader(f'Grade wise purchasing cost of items before selling grade b, c, d items')
 
-grade_a_cost = grade_a_quantity_in_kg * price_per_kg
-st.write(f'Grade A purchasing cost is :green[₹ {grade_a_cost}]')
+    grade_a_cost = grade_a_quantity_in_kg * price_per_kg
+    st.write(f'Grade A purchasing cost is :green[₹ {grade_a_cost}]')
 
-grade_b_cost = grade_b_quantity * price_per_kg
-st.write(f'Grade B purchasing cost is :green[₹ {grade_b_cost}]')
+    grade_b_cost = grade_b_quantity * price_per_kg
+    st.write(f'Grade B purchasing cost is :green[₹ {grade_b_cost}]')
 
-grade_c_cost = grade_c_quantity * price_per_kg
-st.write(f'Grade C purchasing cost is :green[₹ {grade_c_cost}]')
+    grade_c_cost = grade_c_quantity * price_per_kg
+    st.write(f'Grade C purchasing cost is :green[₹ {grade_c_cost}]')
 
-grade_d_cost = grade_d_quantity * price_per_kg
-st.write(f'Grade D purchasing cost is :green[₹ {grade_d_cost}]')
+    grade_d_cost = grade_d_quantity * price_per_kg
+    st.write(f'Grade D purchasing cost is :green[₹ {grade_d_cost}]')
 
 # Additional cost
 
 
-logestic_cost = float(1)
-loading_cost = float(0.70)
-sorting_cost = float(0.50)
-additional_cost = round(loading_cost + loading_cost + sorting_cost)
+    logestic_cost = float(1)
+    loading_cost = float(0.70)
+    sorting_cost = float(0.50)
+    additional_cost = round(loading_cost + loading_cost + sorting_cost)
 
-#Selling prices for all Items
+    #Selling prices for all Items
 
-# b = st.number_input("Enter the selling price per kg for Grade B", value=0)
-# c =st.number_input("Enter the selling price per kg for Grade c", value=0)
-# d = st.number_input("Enter the selling price per kg for Grade d", value=0)
-# if b or c or d < 0:
-#     st.write(":red[Check your input and enter a positive input]")
-# else:
-#     grade_b_total_selling = round(b * grade_b_quantity,2)
-# st.write(f"Total amount collection from grade B is : :green[ ₹ {grade_b_total_selling}]")
-
-
-
-st.subheader("Grade Wise selling price per kg")
-
-grade_b_price = st.number_input("Enter the selling price per kg for Grade B", value=0)
-if grade_b_price < 0:
-    st.write(":red[Check your input and enter a positive input]")
-
-# st.write(f'Final selling cost for garde B after adding additional cost: :green[{grade_b_price}]')
-grade_c_price = st.number_input("Enter the selling price for Grade C", value=0)
-if grade_c_price < 0:
-    st.write(":red[Check your input and enter a positive input]")
-grade_d_price = st.number_input("Enter the selling price for Grade D", value=0)
-if grade_d_price < 0:
-    st.write(":red[Check your input and enter a positive input]")
-
-grade_b_total_selling = round(grade_b_price * grade_b_quantity,2)
-st.write(f"Total amount collection from grade B is : :green[ ₹ {grade_b_total_selling}]")
-
-grade_c_total_selling = round(grade_c_price * grade_c_quantity,2)
-st.write(f"Total amount collection from grade C is : :green[ ₹ {grade_c_total_selling}]")
-
-grade_d_total_selling = round(grade_d_price * grade_d_quantity,2)
-st.write(f"Total amount collection from grade D is : :green[ ₹ {grade_d_total_selling}]")
-
-total_amount_collection_b_c_d = grade_b_total_selling + grade_c_total_selling + grade_d_total_selling
-# st.write(total_amount_collection_b_c_d)
-
-grade_a_amount = round(total_purchasing_cost - total_amount_collection_b_c_d,2)
-st.write(f' Purchasing cost for grade "A" is: :green[ ₹ {grade_a_amount}]')
-purchasing_cost_grade_a_kg = round(grade_a_amount / grade_a_quantity_in_kg,2)
-st.write(f'Purchasing cost per kg of grade "A" is: :green[ ₹  {purchasing_cost_grade_a_kg}]')
-if grade_a_amount < 0:
-    st.write("Note: If purchasing price of grade A is negative it means that the purchasing cost of grade A recovered from grade B,C,D selling, and now negative value is your profit")
-else:
-    pass
+    # b = st.number_input("Enter the selling price per kg for Grade B", value=0)
+    # c =st.number_input("Enter the selling price per kg for Grade c", value=0)
+    # d = st.number_input("Enter the selling price per kg for Grade d", value=0)
+    # if b or c or d < 0:
+    #     st.write(":red[Check your input and enter a positive input]")
+    # else:
+    #     grade_b_total_selling = round(b * grade_b_quantity,2)
+    # st.write(f"Total amount collection from grade B is : :green[ ₹ {grade_b_total_selling}]")
 
 
 
-st.subheader("Per kg selling price for Grades A, B, C and D")
+    st.subheader("Grade Wise selling price per kg")
 
-grade_a_selling_price = round((purchasing_cost_grade_a_kg + additional_cost),2)
-st.write(f'Grade "A": {grade_a_selling_price}')
+    grade_b_price = st.number_input("Enter the selling price per kg for Grade B", value=0)
+    if grade_b_price < 0:
+        st.write(":red[Check your input and enter a positive input]")
 
-grade_b_selling_price = round(grade_b_price + additional_cost,2)
-st.write(f'Grade "B": {grade_b_selling_price}')
+    # st.write(f'Final selling cost for garde B after adding additional cost: :green[{grade_b_price}]')
+    grade_c_price = st.number_input("Enter the selling price for Grade C", value=0)
+    if grade_c_price < 0:
+        st.write(":red[Check your input and enter a positive input]")
+    grade_d_price = st.number_input("Enter the selling price for Grade D", value=0)
+    if grade_d_price < 0:
+        st.write(":red[Check your input and enter a positive input]")
 
-grade_c_selling_price = round(grade_c_price + additional_cost,2)
-st.write(f'Grade "C": {grade_c_selling_price}')
+    grade_b_total_selling = round(grade_b_price * grade_b_quantity,2)
+    st.write(f"Total amount collection from grade B is : :green[ ₹ {grade_b_total_selling}]")
 
-grade_d_selling_price = round(grade_d_price + additional_cost,2)
-st.write(f'Grade "D": {grade_d_selling_price}')
+    grade_c_total_selling = round(grade_c_price * grade_c_quantity,2)
+    st.write(f"Total amount collection from grade C is : :green[ ₹ {grade_c_total_selling}]")
+
+    grade_d_total_selling = round(grade_d_price * grade_d_quantity,2)
+    st.write(f"Total amount collection from grade D is : :green[ ₹ {grade_d_total_selling}]")
+
+    total_amount_collection_b_c_d = grade_b_total_selling + grade_c_total_selling + grade_d_total_selling
+    # st.write(total_amount_collection_b_c_d)
+
+    grade_a_amount = round(total_purchasing_cost - total_amount_collection_b_c_d,2)
+    st.write(f' Purchasing cost for grade "A" is: :green[ ₹ {grade_a_amount}]')
+    purchasing_cost_grade_a_kg = round(grade_a_amount / grade_a_quantity_in_kg,2)
+    st.write(f'Purchasing cost per kg of grade "A" is: :green[ ₹  {purchasing_cost_grade_a_kg}]')
+    if grade_a_amount < 0:
+        st.write("Note: If purchasing price of grade A is negative it means that the purchasing cost of grade A recovered from grade B,C,D selling, and now negative value is your profit")
+    else:
+        pass
+
+
+
+    st.subheader("Per kg selling price for Grades A, B, C and D")
+
+    grade_a_selling_price = round((purchasing_cost_grade_a_kg + additional_cost),2)
+    st.write(f'Grade "A": {grade_a_selling_price}')
+
+    grade_b_selling_price = round(grade_b_price + additional_cost,2)
+    st.write(f'Grade "B": {grade_b_selling_price}')
+
+    grade_c_selling_price = round(grade_c_price + additional_cost,2)
+    st.write(f'Grade "C": {grade_c_selling_price}')
+
+    grade_d_selling_price = round(grade_d_price + additional_cost,2)
+    st.write(f'Grade "D": {grade_d_selling_price}')
 
 
 
