@@ -12,17 +12,17 @@ st.write(saved_user_input)
 #calculate the weight of items and price per kg
 def calculate_weight_and_cost():
     if saved_user_input == 'BAG':
-        total_bags = st.number_input("Total numbers of bags", placeholder= "Enter the total quantity of Bags", value=1)
-        weight_of_single_bag = st.number_input("Enter a Bag Weight",placeholder = "Enter the weight of a single bag", value=1)
+        total_bags = float(st.number_input("Total numbers of bags", placeholder= "Enter the total quantity of Bags", value=0.5))
+        weight_of_single_bag = st.number_input("Enter a Bag Weight",placeholder = "Enter the weight of a single bag", value=0.5)
         total_weight_of_bags = total_bags * weight_of_single_bag
-        price_of_single_bag = st.number_input("Enter price of single Bag", placeholder="Purchasing price of single bag", value=1)
+        price_of_single_bag = st.number_input("Enter price of single Bag", placeholder="Purchasing price of single bag", value=0.5)
         purchasing_cost_per_kg = price_of_single_bag / weight_of_single_bag
         st.write(f'Total weight of items is :green[{total_weight_of_bags} kg] and price for one kg is :green[{purchasing_cost_per_kg} rupees]')
         return total_weight_of_bags, purchasing_cost_per_kg, purchasing_cost_per_kg * total_weight_of_bags
     elif(saved_user_input == "KG"):
-        items_weight = st.number_input("Enter the quantity of the items in kg.", value=1)
+        items_weight = st.number_input("Enter the quantity of the items in kg.", value=0.5)
         st.write(f'Total weight of items is :green[{items_weight}] kg')
-        price_per_kg = st.number_input("Enter price of a kg item", placeholder="Purchasing price og one kg item", value=1)
+        price_per_kg = st.number_input("Enter price of a kg item", placeholder="Purchasing price og one kg item", value=0.5)
         total_purchasing_cost = price_per_kg * items_weight
         st.text(f'Total purchasing cost of items is {total_purchasing_cost}')
         return items_weight, price_per_kg,total_purchasing_cost
